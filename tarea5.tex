@@ -231,8 +231,30 @@
 					\]
 					Para $k = 2$, evaluar
 					$\mathbb{P}(|X-\mu_X| \geq k\sigma_X)$. Con
-					$\mu_X = \mathbb{E}(X)$.\\
-					Compare con la cota dada por la desigualdad de Chebyshev.
+					$\mu_X = \mathbb{E}(X)$. Compare con la cota dada por la
+					desigualdad de Chebyshev.
+					\[\mathbb{E}(X) = \sum{x_i f_X(x_i)} = -1\frac{1}{8}
+					+ 0 \frac{6}{8} + 1 \frac{1}{8} = 0\]
+					\[\mathbb{E}(X^2) = \sum{(x_i)^2 f_X(x_i)} = 1\frac{1}{8}
+					+ 0 \frac{6}{8} + 1 \frac{1}{8} = \frac{1}{4}\]
+					\[\sigma_X = E(X^2) - E(X)^2 = \frac{1}{4} - (0)^2 = \frac{1}{4}\]
+					Por lo que
+					\[\mathbb{P}(|X-\mu_X| \geq k\sigma_X)) =
+					\mathbb{P}(|X| \geq 2 \cdot \frac{1}{4})
+					= \mathbb{P}((X \geq \frac{1}{2}) \cup (X \leq -\frac{1}{2}))\]
+					Y como $X \geq \frac{1}{2}$ y $X \leq -\frac{1}{2}$ no
+					pueden pasar al mismo tiempo, son ajenos, por lo que
+					\begin{align*}
+						\mathbb{P}((X \geq \frac{1}{2}) \cup (X \leq -\frac{1}{2}))
+						&= \mathbb{P}(X \geq \frac{1}{2})
+						+ \mathbb{P}(X \leq -\frac{1}{2})\\
+						&= \frac{1}{8} + \frac{1}{8} = \frac{1}{4}
+					\end{align*}
+					Por otra parte, por la desigualdad de Chebyshev.
+					\[\mathbb{P}(|X-0| \geq 2 \cdot \frac{1}{4}) \leq \frac{1}{2^2}
+					= \frac{1}{4} \]
+					Por lo que el valor real y la cota obtenida por la
+					desigualdad de Chebyshev son iguales.
 				}
 
 				%c
