@@ -178,11 +178,23 @@
 				%a
 				\item {
 				$\frac{d}{dt}Ln(m_X(t))|_{t = 0} = \mathbb{E}(X)$
+				\begin{align*}
+					\frac{d}{dt}Ln(m_X(0)) &= \frac{1}{m_X(0)} \cdot m'_X(0)\\
+					&= \frac{m'_X(0)}{m_X(0)} = \frac{E(X)}{E(X^0)}\\
+					&= E(X)
+				\end{align*}
 				}
 
 				%b
 				\item {
 				$\frac{d^2}{dt^2}Ln(m_X(t))|_{t = 0} = Var(X)$
+				\begin{align*}
+					\frac{d^2}{dt^2}Ln(m_X(0)) &= \frac{d}{dt}\frac{m'_X(0)}{m_X(0)}\\
+					&= \frac{m''_X(0)m_X(0)-m'_X(0)m'_X(0)}{m_X(0)^2}\\
+					&= \frac{E(X^2) \cdot E(X^0) - E(X)E(X)}{E(X^0)}\\
+					&= \frac{E(X^2)-E(X)^2}{1} = E(X^2)-E(X)^2 \\
+					&= Var(X)
+				\end{align*}
 				}
 			\end{enumerate}
 		}
@@ -260,8 +272,26 @@
 				%c
 				\item {
 					Suponga que $X$ es una variable aleatoria con media y
-					varianza igual a 20- ¿Qué se puede decir de
-					$\mathbb{P}(0 \leq X \leq 40)$?
+					varianza igual a 20. ¿Qué se puede decir de
+					$\mathbb{P}(0 \leq X \leq 40)$?\\
+					El evento contrario sería que $X < 0$ o $40 < X$. De aquí
+					\begin{align*}
+						X < 0 &\implies X - 20 < -20 \implies -(X-20) > 20\\
+						40 < X &\implies X - 20 > 20\\
+						\implies &|X-20|>20
+					\end{align*}
+					Entonces, $P(0 \leq X \leq 40) = 1 - P(|X-20|>20)$.\\
+					Luego, por la desigualdad Chebyshev,
+					\[P(|X-E(X)| > k\sigma) < \frac{1}{k^2}\]
+					Como $E(X) = \sigma ^2 = 20$, entonces $k=\sqrt{20}$.
+					Por lo que
+					\[P(|X-20| > 20)  = P(|X-20| > \sqrt{20}\sqrt{20}) <
+					\frac{1}{20}\]
+					Finalmente
+					\[P(0 \leq X \leq 40) = 1 - P(|X-20| > 20)
+					> 1 - \frac{1}{20} = \frac{19}{20}\]
+					Se puede decir que $P(0 \leq X \leq 40)$ es mayor a
+					$\frac{19}{20}$.
 				}
 			\end{enumerate}
 		}
