@@ -196,7 +196,29 @@
 					Si $X$ es una variable aleatoria tal que
 					$\mathbb{E}(X) = 3$ y $\mathbb{E}(X^2) = 13$, use la
 					desigualdad de Chebyshev para determinar una cota inferior
-					para $\mathbb{P}(-2 < X < 8)$.
+					para $\mathbb{P}(-2 < X < 8)$.\\
+					Notemos que si no sucede que $-2 < X < 8$, entonces  sucede que
+					$X \leq -2$ o que $8 \leq X$.\\
+					De estas dos ecuaciones tenemos que
+					\[X \leq -2 \implies X - 3 \leq -5 \implies -(X - 3) \geq 5\]
+					\[ 8 \leq X \implies X - 3 \geq 5\]
+					Lo que implica que $|X-3| \geq 5$.\\
+					Entonces $-2 < X < 8$ y $|X-3| \geq 5$ son eventos
+					complementarios, por lo que
+					\[\mathbb{P}(-2 < X < 8) = 1 - \mathbb{P}(|X-3| \geq 5)\]
+					Luego, por la desigualdad de Chebyshev,
+					\[\mathbb{P}(|X-E(X)| \geq k\sigma) \leq \frac{1}{k^2}\]
+					Y se sabe que
+					\[E(X) = 3\]
+					\[\sigma ^2 = E(X^2) - E(X)^2 = 13 - 9 = 4 \implies \sigma = 2\]
+					Entonces
+					\[\mathbb{P}(|X-3| \geq 5) = \mathbb{P}(|X-3| \geq 2\cdot \frac{5}{2})
+					 \leq \frac{1}{(\frac{5}{2})^2} = \frac{4}{25}\]
+					Por lo tanto
+					\[\mathbb{P}(-2 < X < 8) = 1 - \mathbb{P}(|X-3| \geq 5)
+					\geq 1 - \frac{4}{25} = \frac{21}{25}\]
+					Por lo que $\frac{21}{25}$ es una cota inferior de
+					$\mathbb{P}(-2 < X < 8)$.
 				}
 
 				%b
@@ -226,7 +248,29 @@
 		\item{
 			Si $X$ es una variable aleatoria tal que $\mathbb{E}(X) = 3$ y
 			$\mathbb{E}(X^2) = 13$, use la desigualdad de Chebyshev para
-			determinar una cota mínima para $\mathbb{P}(-2 < X < 8)$.
+			determinar una cota mínima para $\mathbb{P}(-2 < X < 8)$.\\
+			Notemos que si no sucede que $-2 < X < 8$, entonces  sucede que
+					$X \leq -2$ o que $8 \leq X$.\\
+					De estas dos ecuaciones tenemos que
+					\[X \leq -2 \implies X - 3 \leq -5 \implies -(X - 3) \geq 5\]
+					\[ 8 \leq X \implies X - 3 \geq 5\]
+					Lo que implica que $|X-3| \geq 5$.\\
+					Entonces $-2 < X < 8$ y $|X-3| \geq 5$ son eventos
+					complementarios, por lo que
+					\[\mathbb{P}(-2 < X < 8) = 1 - \mathbb{P}(|X-3| \geq 5)\]
+					Luego, por la desigualdad de Chebyshev,
+					\[\mathbb{P}(|X-E(X)| \geq k\sigma) \leq \frac{1}{k^2}\]
+					Y se sabe que
+					\[E(X) = 3\]
+					\[\sigma ^2 = E(X^2) - E(X)^2 = 13 - 9 = 4 \implies \sigma = 2\]
+					Entonces
+					\[\mathbb{P}(|X-3| \geq 5) = \mathbb{P}(|X-3| \geq 2\cdot \frac{5}{2})
+					 \leq \frac{1}{(\frac{5}{2})^2} = \frac{4}{25}\]
+					Por lo tanto
+					\[\mathbb{P}(-2 < X < 8) = 1 - \mathbb{P}(|X-3| \geq 5)
+					\geq 1 - \frac{4}{25} = \frac{21}{25}\]
+					Por lo que $\frac{21}{25}$ es una cota mínima de
+					$\mathbb{P}(-2 < X < 8)$.
 		}
 
 		%12
