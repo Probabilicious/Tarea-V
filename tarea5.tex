@@ -1,3 +1,4 @@
+
 \documentclass[12pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -386,9 +387,74 @@
 				+ \frac{1}{a_n})}
 			\end{align*}
 			como las medidas aritmética, geométrica y armónica respectivamente.
-			Usando la desigualdad de Jenses, demustre que
+			Usando la desigualdad de Jenses, demuestre que
 			\[a_H \leq a_G \leq a_A\]
-		}
+			\textit{Demostración}:\\
+		    La desigualdad de Jensen nos dice que para el caso finito si f es una función convexa entonces:
+			\begin{center}
+			    $$f(\frac{\sum a_{i}x_{i}}{\sum a_{i}})\leq \frac{\sum a_{i}f(x_{i})}{\sum a_{i}}$$
+			\end{center}
+			Y si es una función concava se sigue que:\\
+			\begin{center}
+			    $$f(\frac{\sum a_{i}x_{i}}{\sum a_{i}})\geq \frac{\sum a_{i}f(x_{i})}{\sum a_{i}}$$
+			\end{center}
+			Con $\lbrace x_{i} \rbrace _{i=1}^{n}$ elementos del dominio de f y $\lbrace a_{i} \rbrace _{i=1}^{n}$ pesos positivos.\\
+		   Tomando a $f(x)=log(x)$ y $a_{i}=1 \ \forall i\in \lbrace 1,...,n \rbrace$ se sigue que por criterio de la segunda derivada con respecto de f(x):\\
+		   \begin{center}
+		       $f'(x)=\frac{1}{x} \ \ \Rightarrow  f''(x)=-\frac{1}{x^2}$
+		   \end{center}
+		   Se sigue que $\forall x\in Dom(f)$ $f''(x)$ es negativa  ya que $x^2^$ es positiva siempre. Entonces por criterio de la segunda derivada es concava. Entonces tenemos que usando la desigualdad de Jensen:\\
+		   \begin{center}
+		       $$log(\frac{\sum_{i=1}^{n} a_{i}x_{i}}{\sum_{i=1}^{n} a_{i}})\geq \frac{\sum_{i=1}^{n} a_{i}log(x_{i})}{\sum_{i=1}^{n} a_{i}}$$
+		   \end{center}
+		   Pero como $a_{i}=1 \ \forall i$ entonces:
+		   \begin{center}
+		       $$log(\frac{\sum_{i=1}^{n}x_{i}}{n})\geq \frac{\sum_{i=1}^{n}log(x_{i})}{n}$$
+		   \end{center}
+		   Pero por propiedades de logaritmo se sigue que:
+		   $$\sum_{i=1}^{n}log(x_{i})=log(\prod_{i=1}^{n}x_{i})$$ \\ 
+		      $$\frac{log(x)}{n}=log(x^{\frac{1}{n}})$$\\
+		      Entonces:\\
+		      \begin{center}
+		     $$log(\frac{\sum_{i=1}^{n}x_{i}}{n})\geq log((\prod_{i=1}^{n}x_{i})^{\frac{1}{n}})
+		      $$\end{center}
+		      Y eso sucede solamente cuando:\\
+		      \begin{center}
+		          $$a_{A}=\frac{\sum_{i=1}^{n}x_{i}}{n} \geq (\prod_{i=1}^{n}x_{i})^{\frac{1}{n}}=a_{G}$$
+		      \end{center}
+		      Y eso es igual a decir que $a_{A}\geq a_{G}$. Ahora, podemos reescribir a $a_{H}$ de la siguiente forma:\\
+		      \begin{center}
+		          $$\frac{1}{(\frac{1}{n})(\sum_{i=1}^{n}(\frac{1}{a_{i}}))}=\frac{n}{\sum_{i=1}^{n}(a_{i})^{-1}}=(\frac{\sum_{i=1}^{n}(a_{i})^{-1}}{n})^{-1}$$
+		      \end{center}
+		      Reescribiendo a $(a_{i})^{-1}=k_{i}$ por la desigualdad antes vista se tiene que:\\
+		      \begin{center}
+		          $$\frac{\sum_{i=1}^{n}k_{i}}{n}\geq (\prod_{i=1}^{n}k_{i})^{\frac{1}{n}}$$
+		      \end{center}
+		      Por propiedades de producto, el exponente se distribuye de la siguiente manera:\\
+		      \begin{center}
+		          $$\frac{\sum_{i=1}^{n}k_{i}}{n}\geq \prod_{i=1}^{n}(k_{i})^{\frac{1}{n}}$$
+		      \end{center}
+		      Y reemplazando $k_{i}$ por $a_{i}^{-1}$\\
+		      \begin{center}
+		          $$\frac{\sum_{i=1}^{n}(a_{i})^{-1}}{n} \geq \prod_{i=1}^{n}a_{i}^{-\frac{1}{n}}$$
+		      \end{center}
+		      Y por las mismas propiedades de exponentes se tiene que:\\
+		      \begin{center}
+		          $$\frac{\sum_{i=1}^{n}(a_{i})^{-1}}{n}\geq (\prod_{i=1}^{n}(a_{i})^{\frac{1}{n}})^{-1}$$
+		      \end{center}
+		      
+		      Entonces se tiene que:\\
+		      \begin{center}
+		          $$\frac{\sum_{i=1}^{n}(a_{i})^{-1}}{n}\geq \frac{1}{(\prod_{i=1}^{n}a_{i})^{\frac{1}{n}}}$$\\ \\
+		          $$a_{G}=(\prod_{i=1}^{n}a_{i})^{\frac{1}{n}}\geq \frac{n}{\sum_{i=1}^{n}(a_{i})^{-1}}=\frac{1}{\frac{1}{n}(\sum_{i=1}^{n}(\frac{1}{a_{i}}))}=a_{H}$$
+		          
+		      \end{center}
+		      Entonces $a_{G}\geq a_{H}$ pero $a_{A}\geq a_{G}$ entonces:\\
+		      \begin{center}
+		          $$a_{A}\geq a_{G} \geq a_{H}_{\blacksquare}$$
+		      \end{center}
+		      
+ 		}
 
 		%16
 		\item{
@@ -397,7 +463,17 @@
 			\begin{enumerate}
 				%a
 				\item {
-					$\mathbb{E}(X^3)$
+					$\mathbb{E}(X^3)$ \\
+					Se tiene que $E(X)= \int_{-\infty}^{\infty}xf(x) dx = 25$. Por la desigualdad de Markov tenemos que como X es variable aleatoria no negativa:\\
+					\begin{center}
+					    $P(X\geq \sqrt[3]{a})\leq \frac{E(X)}{\sqrt[3]{a}}=\frac{25}{\sqrt[3]{a}}$\\ 
+					    $P(X^3\geq a)=P(X\geq \sqrt[3]{a})\leq \frac{25}{\sqrt[3]{a}}$
+					\end{center}
+					Y por el corolario de Markov se tiene que $P(X\geq a)\leq \frac{E(X^3)}{a}$. Esto implica que:\\
+					\begin{center}
+					    $\frac{25}{\sqrt[3]{a}}\leq \frac{E(X^3)}{a}.$\\
+					    $25\sqrt[3]{a^2}\leq E(X^3) \ \forall a>0.$
+					\end{center}
 				}
 
 				%b
@@ -428,3 +504,16 @@
 
 	\end{enumerate}
 \end{document}
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
