@@ -235,6 +235,7 @@
 			\[f_X(x) = \frac{2}{3^x} \mathbb{I}_{\{1, 2, 3, ...\}}(x)\]
 			¿Cuál es la probabilidad de que $X$ sea par?
 		}
+		\newline
 		Se tiene que la probabilidad de que $X$ sea par, está dada por
 			$$ P(X = 2) + P(X = 4) + P(X = 6) + ... + P(X = 2x) \text{ con }
 			   x \in \{1,2,3, ...\} $$
@@ -265,6 +266,7 @@
 			   = \frac{1}{4}$$
 		se sigue entonces que la probabilidad de que $X$ sea par es
 		$\frac{1}{4}$.
+
 		%8
 		\item{
 			Sea $X$ variable aleatoria con función de densidad dada por
@@ -276,16 +278,71 @@
 				\item {
 					$M_X(t)$
 				}
-
+				\newline
+				Se tiene para una variable aleatoria continua que la función
+				generadora de momentos está dada por:
+					$$ M_X(t) = \int_{-\infty}^{\infty} e^{tx}f_X^{(x)} dx $$
+				sustituyendo la función de densidad dada en el ejercicio:
+					$$ M_X(t) = \int_{-\infty}^{\infty} e^{tx}
+								\Big( \frac{e^{-\frac{x}{2}}}{2} \Big) dx $$
+					$$ = \frac{1}{2} \int_{-\infty}^{\infty} e^{tx}
+						  e^{-\frac{x}{2}} dx $$
+					$$ = \frac{1}{2} \int_{-\infty}^{\infty}
+						 e^{tx -\frac{x}{2}} dx $$
+				tomando $u = tx -\frac{x}{2}$, $du = (t -\frac{1}{2}) dx$,
+				$ dx = \frac{du}{(t -\frac{1}{2})} $:
+					$$ = \frac{1}{2} \int_{-\infty}^{\infty}
+						 e^u \frac{du}{t -\frac{1}{2}} $$
+					$$ = \frac{1}{2} \int_{-\infty}^{\infty}
+						 2e^u \frac{du}{2t - 1} $$
+					$$ = \frac{1}{2t - 1} \int_{-\infty}^{\infty} e^u du$$
+					$$ = \frac{1}{2t - 1} \Big[ e^{tx -\frac{x}{2}} \Big]
+						 \Big|_{-\infty}^{\infty}$$
+				notemos que como por hipótesis del problema, $ x > 0$, entonces:
+				 	$$ = \frac{1}{2t - 1} \Big[ e^{tx -\frac{x}{2}} \Big]
+						 \Big|_{0}^{\infty}
+					   = \frac{1}{2t - 1} \Big[ e^{x(t -\frac{1}{2})} \Big]
+   						 \Big|_{0}^{\infty} $$
+				ahora, condicionando a $ t - \frac{1}{2} < 0 $, i.e.
+				$ t < \frac{1}{2} $ de tal forma que la función exponencial
+				converja, se sigue:
+					$$ = \frac{1}{2t - 1} \Big[ e^{- \infty} - e^0 \Big]
+					   = \frac{1}{2t - 1} \Big[ 0 - 1 \Big]
+					   = - \frac{1}{2t - 1} $$
+				por lo tanto:
+					$$ M_X(t) = - \frac{1}{2t - 1} $$
 				%b
 				\item {
 					$\mathbb{E}(X)$
 				}
+				\newline
+				Dada la función generadora de momentos, se sigue que la
+				esperanza puede hallarse mediante:
+					$$ \mathbb{E}(X) = \frac{d}{dt} M_X(t) \Big|_{0} $$
+				desarrollando, se tiene:
+					$$ \mathbb{E}(X)
+					 = \frac{d}{dt} \Big[ - \frac{1}{2t - 1} \Big] \Big|_{0} $$
+					$$ = \frac{2}{(2t - 1)^2}  \Big|_{0}
+					   = \frac{2}{(0 - 1)2} = \frac{2}{1} = 2$$
+				así, $ \mathbb{E}(X) = 2 $
 
 				%c
 				\item {
 					$Var(X)$
 				}
+				\newline
+				Por definición de varianza, se tiene:
+					$$ Var(X) = \mathbb{E}(X^2) - \mathbb{E}(X)^2$$
+				usando la función generadora de momentos para hallar
+				$\mathbb{E}(X^2)$:
+					$$ \mathbb{E}(X^2)
+					 = \frac{d^2}{dt^2} \Big[ - \frac{1}{2t - 1} \Big]
+					   \Big|_{0} $$
+					$$ = \frac{-8}{(2t - 1)^3}  \Big|_{0}
+					   = \frac{-8}{(0 - 1)3} = \frac{-8}{-1} = 8$$
+				así,
+					$$ Var(X) = \mathbb{E}(X^2) - \mathbb{E}(X)^2
+							  = 8 - 2^2 = 8 - 4 = 4$$
 			\end{enumerate}
 		}
 
