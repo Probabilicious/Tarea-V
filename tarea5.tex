@@ -49,26 +49,26 @@
 			que Itzel es la primera en lanzar un dado. ¿Cuál es la probabilidad
 			de que Gage gane?
 			\\ \\
-	        Tenemos que la probabilidad de que gane Gage en su primer lanzamiento es la 
-		probabilidad de que lanzo un 6 por la probabilidad de que Itzel no lanzo un 
+	        Tenemos que la probabilidad de que gane Gage en su primer lanzamiento es la
+		probabilidad de que lanzo un 6 por la probabilidad de que Itzel no lanzo un
 		6, lo cual es:
 	        \[\frac{1}{6}\frac{5}{6}\]
-	        De esto, tenemos que en su tercer lanzamiento es la probabilidad de que en 
-		ninguno de los anteriors lanzo un 	6 por la probabilidad que lanzo  un 6:		
+	        De esto, tenemos que en su tercer lanzamiento es la probabilidad de que en
+		ninguno de los anteriors lanzo un 	6 por la probabilidad que lanzo  un 6:
 	        \[\frac{1}{6}\frac{5}{6}\frac{5}{6}\frac{5}{6}\]
 	        Y esto lo podemos ver como:
 	        \[\frac{1}{6}(\frac{5}{6})^{3}\]
 	        Entonces en el n-esimo lanzamiento tendremos:
 	        \[\frac{1}{6}(\frac{5}{6})^{n}\]
-	        
+
 	        Por lo tanto la probabilidad de que Gage gane es:
 	        \[\frac{1}{6}\frac{5}{6} + \frac{1}{6}(\frac{5}{6})^{3} + ... + \frac{1}{6}(\frac{5}{6})^{n}\]
-	        
+
 	        \[\sum^{\infty}_{x=1} \frac{1}{6}(\frac{5}{6})^{2x - 1}\]
-	        
-	        
+
+
 	       `
-			
+
 		}
 		%2
 		\item{
@@ -81,7 +81,7 @@
 				\end{cases}
 			\]
 			Prueve que $f_X(x)$ es de densidad. Grafíquela.\\
-			
+
 			Podemos ver a $x - \alpha$ como u, entonces:
 			\[\alpha - \beta - \alpha = -\beta\]
 			\[\beta - \alpha - \alpha = \beta\]
@@ -90,15 +90,15 @@
 			Pero es valor absoluto entonces:
 			\[\int^\beta_{-\beta} \frac{1}{\beta}du - \int^\beta_{-\beta} \frac{|\frac{u}{\beta}|}{\beta}du\]
 			\[\int^\beta_{-\beta} \frac{1}{\beta}du -( \int^\beta_{0} \frac{\frac{u}{\beta}}{\beta}du + 				\int^0_{-\beta}  \frac{\frac{u}{\beta}}{\beta}du)\]
-			\[(\frac{\beta}{\beta}-\frac{-\beta}{\beta}) - ((\frac{\beta^2}{2\beta^2} - 0) 
+			\[(\frac{\beta}{\beta}-\frac{-\beta}{\beta}) - ((\frac{\beta^2}{2\beta^2} - 0)
 			+ (0 - \frac{(-\beta)^2}{2\beta^2}))\]
 			\[(1-(-1) - (\frac{1}{2} + \frac{1}{2})\]
 			\[2-1\]
 			\[1\]
 			Entonces $f_X(x)$ es de densidad.\\
-			En la grafica tendremos un v invertido. Donde $\beta$ define que tan grande es su angulo, 
-			si $\beta$ es grande, el angulo sera menor. Ademas, el punto de origen se define a 
-			respeto de $\beta$ y $\alpha$. El mas pequeno que es $\beta$, mas grande es y, y $x$ 
+			En la grafica tendremos un v invertido. Donde $\beta$ define que tan grande es su angulo,
+			si $\beta$ es grande, el angulo sera menor. Ademas, el punto de origen se define a
+			respeto de $\beta$ y $\alpha$. El mas pequeno que es $\beta$, mas grande es y, y $x$
 			= $\alpha$.
 		}
 
@@ -117,7 +117,7 @@
 				%a
 				\item {
 				Calcule $\mathbb{E}(X)$.
-				
+
 				Tenemos que en el primer lanzamiento es:
 				\[\frac{1}{2}2^{1}\]
 				En el segundo es:
@@ -728,7 +728,7 @@
 		   \begin{center}
 		       $f'(x)=\frac{1}{x} \ \ \Rightarrow  f''(x)=-\frac{1}{x^2}$
 		   \end{center}
-		   Se sigue que $\forall x\in Dom(f)$ $f''(x)$ es negativa  ya que $x^2^$ es positiva siempre. Entonces por criterio de la segunda derivada es concava. Entonces tenemos que usando la desigualdad de Jensen:\\
+		   Se sigue que $\forall x\in Dom(f)$ $f''(x)$ es negativa  ya que $x^2$ es positiva siempre. Entonces por criterio de la segunda derivada es concava. Entonces tenemos que usando la desigualdad de Jensen:\\
 		   \begin{center}
 		       $$log(\frac{\sum_{i=1}^{n} a_{i}x_{i}}{\sum_{i=1}^{n} a_{i}})\geq \frac{\sum_{i=1}^{n} a_{i}log(x_{i})}{\sum_{i=1}^{n} a_{i}}$$
 		   \end{center}
@@ -770,13 +770,13 @@
 
 		      Entonces se tiene que:\\
 		      \begin{center}
-		          $$\frac{\sum_{i=1}^{n}(a_{i})^{-1}}{n}\geq \frac{1}{(\prod_{i=1}^{n}a_{i})^{\frac{1}{n}}}$$\\ \\
+		          $$\frac{\sum_{i=1}^{n}(a_{i})^{-1}}{n}\geq \frac{1}{(\prod_{i=1}^{n}a_{i})^{\frac{1}{n}}}$$
 		          $$a_{G}=(\prod_{i=1}^{n}a_{i})^{\frac{1}{n}}\geq \frac{n}{\sum_{i=1}^{n}(a_{i})^{-1}}=\frac{1}{\frac{1}{n}(\sum_{i=1}^{n}(\frac{1}{a_{i}}))}=a_{H}$$
 
 		      \end{center}
 		      Entonces $a_{G}\geq a_{H}$ pero $a_{A}\geq a_{G}$ entonces:\\
 		      \begin{center}
-		          $$a_{A}\geq a_{G} \geq a_{H}_{\blacksquare}$$
+		          $$a_{A}\geq a_{G} \geq a_{H} {\blacksquare}$$
 		      \end{center}
 
  		}
