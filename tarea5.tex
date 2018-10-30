@@ -412,7 +412,7 @@
 		       $$log(\frac{\sum_{i=1}^{n}x_{i}}{n})\geq \frac{\sum_{i=1}^{n}log(x_{i})}{n}$$
 		   \end{center}
 		   Pero por propiedades de logaritmo se sigue que:
-		   $$\sum_{i=1}^{n}log(x_{i})=log(\prod_{i=1}^{n}x_{i})$$ \\ 
+		   $$\sum_{i=1}^{n}log(x_{i})=log(\prod_{i=1}^{n}x_{i})$$ \\
 		      $$\frac{log(x)}{n}=log(x^{\frac{1}{n}})$$\\
 		      Entonces:\\
 		      \begin{center}
@@ -442,18 +442,18 @@
 		      \begin{center}
 		          $$\frac{\sum_{i=1}^{n}(a_{i})^{-1}}{n}\geq (\prod_{i=1}^{n}(a_{i})^{\frac{1}{n}})^{-1}$$
 		      \end{center}
-		      
+
 		      Entonces se tiene que:\\
 		      \begin{center}
 		          $$\frac{\sum_{i=1}^{n}(a_{i})^{-1}}{n}\geq \frac{1}{(\prod_{i=1}^{n}a_{i})^{\frac{1}{n}}}$$\\ \\
 		          $$a_{G}=(\prod_{i=1}^{n}a_{i})^{\frac{1}{n}}\geq \frac{n}{\sum_{i=1}^{n}(a_{i})^{-1}}=\frac{1}{\frac{1}{n}(\sum_{i=1}^{n}(\frac{1}{a_{i}}))}=a_{H}$$
-		          
+
 		      \end{center}
 		      Entonces $a_{G}\geq a_{H}$ pero $a_{A}\geq a_{G}$ entonces:\\
 		      \begin{center}
 		          $$a_{A}\geq a_{G} \geq a_{H}_{\blacksquare}$$
 		      \end{center}
-		      
+
  		}
 
 		%16
@@ -464,31 +464,62 @@
 				%a
 				\item {
 					$\mathbb{E}(X^3)$ \\
-					Se tiene que $E(X)= \int_{-\infty}^{\infty}xf(x) dx = 25$. Por la desigualdad de Markov tenemos que como X es variable aleatoria no negativa:\\
-					\begin{center}
-					    $P(X\geq \sqrt[3]{a})\leq \frac{E(X)}{\sqrt[3]{a}}=\frac{25}{\sqrt[3]{a}}$\\ 
-					    $P(X^3\geq a)=P(X\geq \sqrt[3]{a})\leq \frac{25}{\sqrt[3]{a}}$
-					\end{center}
-					Y por el corolario de Markov se tiene que $P(X\geq a)\leq \frac{E(X^3)}{a}$. Esto implica que:\\
-					\begin{center}
-					    $\frac{25}{\sqrt[3]{a}}\leq \frac{E(X^3)}{a}.$\\
-					    $25\sqrt[3]{a^2}\leq E(X^3) \ \forall a>0.$
-					\end{center}
+
+				Tenemos que $\frac{d^2}{dx^2}x^3=6x$ y como X es variable aleatoria no negativa tenemos que $6x>0 \ \forall x$. Entonces es una función convexa entonces se cumple que:\\
+				\begin{center}
+				    $E(X)^3 \leq E(X^3)$
+				\end{center}
+				Pero como $E(X)=25$ entonces:\\
+				\begin{center}
+				    $E(X)< E(X^3)$
+				\end{center}
+
 				}
+
 
 				%b
 				\item {
 					$\mathbb{E}(\sqrt{X})$
+
+				Tenemos que si $f(x)=\sqrt{x}$ se sigue que $f''(x)=-\frac{1}{4\sqrt{x^3}}$ y como $x>0 \ \forall x\in Dom(f)$ porque nuestra variable aleatoria es positiva se sigue entonces que $f''(x)<0$ entonces es concava entonces:\\
+				\begin{center}
+				    $\sqrt{E(X)}\geq E(\sqrt{X})$
+				\end{center}
+				Pero, como $E(X)=25 \ \Rightarrow \sqrt{E(X)}=5$ entonces:\\
+				\begin{center}
+				    $E(X) > E(\sqrt{X})$
+				\end{center}
+
 				}
 
 				%c
 				\item {
-					$\mathbb{E}(log(X))$
+					$\mathbb{E}(log(X))$\\ \\
+					Como $log(x)$ es una función cóncava (inciso anterior) entonces por la desigualdad de Jensen para la esperanza se sigue que:\\
+					\begin{center}
+					    $log(E(X))\geq E(log(X))$
+					\end{center}
+					Y por propiedades de logaritmo: $log(x)\leq x-1 \ \Rightarrow log(x) < x$ entonces:\\
+					\begin{center}
+					    $E(X)> log(E(X)) \geq E(log(X)) \Rightarrow E(X) > E(log(X))$
+					\end{center}
 				}
 
 				%d
 				\item {
-					$\mathbb{E}(e^{-X})$
+					$\mathbb{E}(e^{-X})$\\
+					Tenemos que:\\
+					\begin{center}
+					    $$\frac{d^2}{dx^2} e^{-x}=e^{-x}=\frac{1}{e^x}$$
+					\end{center}
+					Tenemos que como $\frac{1}{e^x}>0 \ \forall x\in Dom(f)$ la función es convexa. Entonces por desigualdad de Jensen:\\
+					\begin{center}
+					    $e^{-E(X)}\leq E(e^{-x})$
+					\end{center}
+					Pero $E(X)=25$ entonces:\\
+					\begin{center}
+					    $$\frac{1}{e^{25}}\leq E(e^{-x})$$
+					\end{center}
 				}
 			\end{enumerate}
 		}
@@ -500,20 +531,17 @@
 			entonces
 			\[\mathbb{E}(X) = \int_{0}^{\infty}{(1-F_X(x))dx} -
 			\int_{-\infty}^{0}{F_X(x)dx}\]
+
+
+			\begin{align*}
+E[X] &= E\bigg[\int_0^X 1\,dx\bigg]\\
+&= E\bigg[\int_0^\infty 1_{\{X>x\}}\,dx\bigg]\\
+&= \int_0^\infty E[1_{\{X>x\}}]\,dx\\
+&= \int_0^\infty P(X > x)\,dx\\
+&= \int_0^\infty (1 - F(x))\,dx
+\end{align*}
+
 		}
 
 	\end{enumerate}
 \end{document}
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Press h to open a hovercard with more details.
