@@ -116,7 +116,7 @@
 				\newline
 				Consideremos a $g(a)$ una función de $"a"$, tal que
 					$$ g(a) = \mathbb{E}((Y - a)^2) $$
-				desarrolando, se sigue:
+				desarrollando, se sigue:
 					$$ \mathbb{E}((Y - a)^2) = \mathbb{E}(Y^2 - 2aY + a^2) $$
 				luego, por propiedades de la esperanza:
 					$$ g(a) = \mathbb{E}(Y^2) - 2a\mathbb{E}(Y) + a^2 $$
@@ -143,7 +143,7 @@
 				\newline
 				Ahora, considerando a $ h(a) $ una función tal que
 					$$ h(a) = \mathbb{E}((aY - \frac{1}{a})^2) $$
-				desarrolando, se tiene:
+				desarrollando, se tiene:
 					$$ \mathbb{E}((aY - \frac{1}{a})^2) = \mathbb{E}(a^2Y^2
 					 - 2Y + \frac{1}{a^2}) $$
 				entonces, por propiedades de la esperanza, se sigue:
@@ -235,7 +235,36 @@
 			\[f_X(x) = \frac{2}{3^x} \mathbb{I}_{\{1, 2, 3, ...\}}(x)\]
 			¿Cuál es la probabilidad de que $X$ sea par?
 		}
-
+		Se tiene que la probabilidad de que $X$ sea par, está dada por
+			$$ P(X = 2) + P(X = 4) + P(X = 6) + ... + P(X = 2x) \text{ con }
+			   x \in \{1,2,3, ...\} $$
+		exprasándola en términos de la función de densidad:
+			$$ f_X^{(2)} + f_X^{(4)} + f_X^{(6)} + ... + f_X^{(2x)} \text{ con }
+			   x \in \{1,2,3, ...\} $$
+		lo cual, también se puede expresar como :
+			$$ \sum_{x = 1}^{\infty} f_X^{(2x)} $$
+		que a su vez, es equivalente a :
+			$$ \sum_{x = 1}^{\infty} \frac{2}{3^{2x}} $$
+		desarrollando, tenemos:
+			$$ \sum_{x = 1}^{\infty} \frac{2}{3^{2x}}
+			 = \sum_{x = 1}^{\infty} 2 \frac{1}{3^{2x}}
+			 = 2 \sum_{x = 1}^{\infty} \frac{1}{9^x}
+			 = 2 \sum_{x = 1}^{\infty} \Big( \frac{1}{9} \Big)^x $$
+		luego, sumando y restando $ \Big( \frac{1}{9} \Big)^0  $ de tal forma
+		que el resultado no se vea alterado:
+			$$ = 2 \Big[ \sum_{x = 1}^{\infty} \Big( \frac{1}{9} \Big)^x
+			   + \Big( \frac{1}{9} \Big)^0 - \Big( \frac{1}{9} \Big)^0 \Big] $$
+			$$ = 2 \Big[  \sum_{x = 0}^{\infty} \Big( \frac{1}{9} \Big)^x
+			   - \Big( \frac{1}{9} \Big)^0 \Big] $$
+			$$ = 2 \Big[ \sum_{x = 0}^{\infty} \Big( \frac{1}{9} \Big)^x
+			   - 1 \Big] $$
+		se tiene que como $ \Big( \frac{1}{9} \Big) < 1 $, la serie converge de
+		tal forma que:
+			$$ = 2 \Big[ \frac{1}{1 - \frac{1}{9}} - 1 \Big]
+			   = 2 \Big[ \frac{9}{8} - \frac{8}{8} \Big] = \frac{2}{8}
+			   = \frac{1}{4}$$
+		se sigue entonces que la probabilidad de que $X$ sea par es
+		$\frac{1}{4}$.
 		%8
 		\item{
 			Sea $X$ variable aleatoria con función de densidad dada por
